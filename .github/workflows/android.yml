@@ -34,9 +34,17 @@ jobs:
       run: echo "sdk.dir=$ANDROID_HOME" > local.properties
 
     - name: Build with Gradle
-      run: ./gradlew assembleDebug --no-daemon --stacktrace --console=plain
+      run: ./gradlew assembleDebug --no-daemon --stacktrace > build.txt 2>&1 || (cat build.txt && exit 1)
+
+    - name: Upload Build Log
+      if: failure()
+      uses: actions/upload-artifact@v4
+      with:
+        name: build-error-log
+        path: build.txt
 
     - name: Upload APK
+      if: success()
       uses: actions/upload-artifact@v4
       with:
         name: app-debug
