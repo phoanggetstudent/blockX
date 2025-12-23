@@ -21,6 +21,10 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
+    - name: Accept Android Licenses
+      run: |
+        yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
+
     - name: Fix gradlew line endings and permissions
       run: |
         sed -i 's/\r$//' gradlew
