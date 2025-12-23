@@ -34,7 +34,7 @@ jobs:
       run: echo "sdk.dir=$ANDROID_HOME" > local.properties
 
     - name: Build with Gradle
-      run: ./gradlew assembleDebug --no-daemon --stacktrace > build.txt 2>&1 || (cat build.txt && exit 1)
+      run: ./gradlew assembleDebug --no-daemon --stacktrace > build.txt 2>&1 || (tail -n 200 build.txt && exit 1)
 
     - name: Upload Build Log
       if: failure()
