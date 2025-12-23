@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">SmartGuardian</string>
+    <string name="enable_admin">Bật Chống Gỡ Cài Đặt</string>
+    <string name="disable_admin">Tắt Chống Gỡ Cài Đặt</string>
+    <string name="enable_vpn">Bật Chặn Web</string>
+    <string name="stop_vpn">Tắt Chặn Web</string>
+    <string name="enable_accessibility">Bật Giám Sát Nội Dung</string>
+    <string name="admin_description">Cho phép ứng dụng ngăn chặn việc gỡ cài đặt trái phép.</string>
+    <string name="admin_label">SmartGuardian Admin</string>
+    <string name="accessibility_description">Giám sát nội dung để chặn Shorts và Web đen.</string>
+    <string name="status_active">Đang hoạt động</string>
+    <string name="status_inactive">Chưa kích hoạt</string>
+</resources>
